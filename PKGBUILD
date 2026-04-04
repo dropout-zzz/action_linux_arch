@@ -78,6 +78,20 @@ prepare() {
   echo "-$pkgrel" > localversion.10-pkgrel
   echo "${pkgname#linux}" > localversion.20-pkgname
 
+  # files created by patches
+  rm -f Documentation/scheduler/sched-BMQ.txt
+  rm -f drivers/pci/controller/intel-nvme-remap.c
+  rm -f drivers/scsi/vhba/Kconfig
+  rm -f drivers/scsi/vhba/Makefile
+  rm -f drivers/scsi/vhba/vhba.c
+  rm -f kernel/sched/alt_core.h
+  rm -f kernel/sched/alt_debug.c
+  rm -f kernel/sched/alt_sched.h
+  rm -f kernel/sched/alt_topology.c
+  rm -f kernel/sched/alt_topology.h
+  rm -f kernel/sched/bmq.h
+  rm -f kernel/sched/pds.h
+
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
