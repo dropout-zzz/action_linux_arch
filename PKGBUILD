@@ -19,7 +19,6 @@ makedepends=(
   cpio
   gettext
   libelf
-  pahole
   perl
   python
   tar
@@ -59,7 +58,7 @@ b2sums=('f91cdd0b8727ce50ba286b321e85f394ff7e2eff27cde6e6e85e8abfc627b2b069bb567
         'SKIP'
         '2d3391509cf78a85d62c5184793e0257810c683a3e7e7253d5c16b63ca3cf4795e91af6ed879b61fe5c05f5b42d52cd93344c77d633efac6c28ad657edbb3cb0'
         'SKIP')
-b2sums_x86_64=('462962f6995dfe702a5de08296619aea9b2091930892e32f517d385984a46ecf6bdc4d2261e0896837e7235d4da1dd643e3ed4a759f2d2398d647f0f0913a7b9')
+b2sums_x86_64=('6a4642a804aa3e84c24671e0b7d4bc80e5da3e00805150e2e686530f2c0b83afa0f46dedd7d1ddf5e4085e338c6089efc23b0a3572facf55e150204cf66282a8')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 sha256sums=('466d441a0ea5e04b7023618b7b201bfd60effab225f806fd41ce663484395a1c'
