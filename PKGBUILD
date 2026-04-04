@@ -112,6 +112,7 @@ prepare() {
 
 build() {
   cd $_srcname
+  diff -q ../config.$CARCH .config > /dev/null || cp ../config.$CARCH .config
   make all
 }
 
