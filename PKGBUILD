@@ -133,7 +133,7 @@ package() {
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build link
-  rm "$modulesdir"/build
+  rm -f "$modulesdir"/build
 }
 
 # vim:set ts=8 sts=2 sw=2 et:
