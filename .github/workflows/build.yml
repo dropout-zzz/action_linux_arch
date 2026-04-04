@@ -16,3 +16,13 @@ jobs:
       run: |
         gpg --import keys/pgp/*.asc
         ./makepkg_wrapper.sh -o
+    - name: build
+      run: ./makepkg_wrapper.sh -e -L
+    - uses: softprops/action-gh-release@v2
+      with:
+        tag_name: build-${{ github.run_number }}
+        name: Build ${{ github.run_number }}
+        files: |
+          linux-*.pkg.tar.zst
+          linux-*.log
+        fail_on_unmatched_files: true

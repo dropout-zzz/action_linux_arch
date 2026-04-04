@@ -7,5 +7,7 @@
 /*.xz
 /*.zst
 
+/*.log
+/*.log.*
 /src/
 /pkg/
