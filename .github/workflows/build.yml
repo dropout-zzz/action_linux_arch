@@ -2,6 +2,12 @@ name: Build
 
 on:
   workflow_dispatch:
+    inputs:
+      testing_workflow:
+        type: boolean
+        required: true
+        default: false
+        description: 'Use dummy kernel config? (for testing workflow)'
 
 jobs:
   build:
@@ -12,6 +18,9 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install pacman-package-manager libarchive-tools libelf-dev
+    - name: override test config
+      if: ${{ inputs.testing_workflow }}
+      run: cp allnoconfig.txt config.x86_64
     - name: fetch sources
       run: |
         gpg --import keys/pgp/*.asc
