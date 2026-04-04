@@ -1,3 +1,11 @@
 /*.old
 /*.orig
 /*.rej
+
+/*.sig
+/*.sign
+/*.xz
+/*.zst
+
+/src/
+/pkg/
