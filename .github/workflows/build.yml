@@ -7,7 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v6
     - name: install build deps
       run: |
         sudo apt-get update
-        sudo apt-get install makepkg
+        sudo apt-get install pacman-package-manager
+    - name: fetch sources
+      run: |
+        gpg --import keys/pgp/*.asc
+        ./makepkg_wrapper.sh -o
