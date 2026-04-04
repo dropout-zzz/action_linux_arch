@@ -11,7 +11,7 @@ jobs:
     - name: install build deps
       run: |
         sudo apt-get update
-        sudo apt-get install pacman-package-manager
+        sudo apt-get install pacman-package-manager libarchive-tools
     - name: fetch sources
       run: |
         gpg --import keys/pgp/*.asc
