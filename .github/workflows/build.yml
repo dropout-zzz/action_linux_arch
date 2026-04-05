@@ -9,6 +9,9 @@ on:
         default: false
         description: 'Use dummy kernel config? (for testing workflow)'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
