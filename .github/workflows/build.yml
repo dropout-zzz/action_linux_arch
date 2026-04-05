@@ -29,7 +29,7 @@ jobs:
         gpg --import keys/pgp/*.asc
         ./makepkg_wrapper.sh -o
     - name: build
-      run: ./makepkg_wrapper.sh -e -L
+      run: ./makepkg_wrapper.sh -e
     - uses: softprops/action-gh-release@v2
       with:
         tag_name: build-${{ github.run_number }}

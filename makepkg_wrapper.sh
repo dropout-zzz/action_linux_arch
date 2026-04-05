@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec makepkg --config makepkg.conf -d "$@"
+exec makepkg --config makepkg.conf -d -L "$@"
