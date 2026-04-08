@@ -2,7 +2,7 @@
 
 pkgname=linux-zen
 pkgver=6.19.10.zen1
-pkgrel=1
+pkgrel=2
 pkgdesc='The Linux ZEN kernel and modules'
 url='https://github.com/zen-kernel/zen-kernel'
 arch=(
