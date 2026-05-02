@@ -2,7 +2,7 @@
 
 pkgname=linux-zen
 pkgver=6.19.10.zen1
-pkgrel=2
+pkgrel=3
 pkgdesc='The Linux ZEN kernel and modules'
 url='https://github.com/zen-kernel/zen-kernel'
 arch=(
@@ -47,6 +47,10 @@ _srctag=v${pkgver%.*}-${pkgver##*.}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
+
+  # https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/patch/?id=ce42ee423e58dffa5ec03524054c9d8bfd4f6237
+  # https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/patch/?id=cded4002d22177e8deaca1f257ecd932c9582b6b
+  copyfail_cve.patch
 )
 source_x86_64=(config.x86_64)
 validpgpkeys=(
@@ -57,14 +61,16 @@ validpgpkeys=(
 b2sums=('f91cdd0b8727ce50ba286b321e85f394ff7e2eff27cde6e6e85e8abfc627b2b069bb5679d890dd33384123c866dc3c1325ad83953a4d08d4db669150cd88cccd'
         'SKIP'
         '2d3391509cf78a85d62c5184793e0257810c683a3e7e7253d5c16b63ca3cf4795e91af6ed879b61fe5c05f5b42d52cd93344c77d633efac6c28ad657edbb3cb0'
-        'SKIP')
+        'SKIP'
+        '9b97460bd2f75f60ff8c912ef74effe9d8f7555f4045f3ae5da8e4a7394d37c5a25fc08da9e8a393cb8c6f6def4ca13205021141944682cfa90b25764251411e')
 b2sums_x86_64=('SKIP')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 sha256sums=('466d441a0ea5e04b7023618b7b201bfd60effab225f806fd41ce663484395a1c'
             'SKIP'
             '20add8776bad2699b1b9f804557471238a1b38504ca7d4e2d70ad0b6c5fc89c0'
-            'SKIP')
+            'SKIP'
+            'e36a93e1b5b8c3bce843e4061558d02e4212d049b1a263b3b0635524b211b11f')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgname
